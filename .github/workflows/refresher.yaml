@@ -1,0 +1,29 @@
+name: refresh token
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "06 01 * * *"
+
+jobs:
+  worker:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Depends
+        run: |
+          sudo apt-get update && \
+          sudo apt-get install -y unzip curl python3 && \
+          sudo curl https://rclone.org/install.sh | sudo bash && \
+          sudo pip3 install git+https://github.com/heston/Pyrebase.git@a77bd6f6def656b1dcd77d938fac2707f3c4ba61#egg
+      - name: Download Rclone Config
+        run: |
+          python3 RcloneConfig.py download \
+          ${{ secrets.FIREBASE_API_KEY }} ${{ secrets.FIREBASE_PASSWORD }}
+      - name: RUN
+        run: python3 Refresh.py
+      - name: Upload Rclone Config
+        run: |
+          python3 RcloneConfig.py upload \
+          ${{ secrets.FIREBASE_API_KEY }} ${{ secrets.FIREBASE_PASSWORD }}
