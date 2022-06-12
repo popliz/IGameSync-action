@@ -14,12 +14,15 @@ Driver2 = "od_lizkes_storage_root:"
 Driver3 = "od_lizkes2_backup_root:"
 
 sync_commands = [
+    # 临时
+    f"rclone sync od_lizkes_lizkes_root:/个人 {Driver1}/个人 {command_arg}",
     # 同步
     f"rclone sync {Driver1}/IGame {Driver2}/IGame {command_arg}",
     # 备份
+    f"rclone sync {Driver2}/IGame {Driver3}/IGame {command_arg}",
     f"rclone sync {Driver1}/未处理 {Driver3}/未处理 {command_arg}",
-    f"rclone sync {Driver1}/IGame {Driver3}/IGame {command_arg}",
     f"rclone sync {Driver1}/Public {Driver3}/Public {command_arg}",
+    f"rclone sync {Driver1}/个人 {Driver3}/个人 {command_arg}",
 ]
 
 limit_time = 5 * 3600
