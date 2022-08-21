@@ -6,11 +6,10 @@ command_arg = ("--timeout 30s --contimeout 10s "
                "--retries 30 --retries-sleep 1s")
 
 Driver1 = "gd_team1_lizkes:"
-Driver2 = "od_lizkes_lizkes_root:"
-Driver3 = "od_lizkes_storage_root:"
-Driver4 = "od_lizkes2_backup_root:"
-Driver5 = "odcn_paolusite_a9ae_root:"
-Driver6 = "odcn_paolusite_ba95_sp:"
+Driver2 = "od_lizkes_backup_root:"
+Driver3 = "od_lizkes2_backup_root:"
+Driver4 = "odcn_paolusite_a9ae_root:"
+Driver5 = "odcn_paolusite_ba95_sp:"
 
 refesh_commands = [
     f"rclone about {Driver1} {command_arg}",
@@ -18,7 +17,6 @@ refesh_commands = [
     f"rclone about {Driver3} {command_arg}",
     f"rclone about {Driver4} {command_arg}",
     f"rclone about {Driver5} {command_arg}",
-    f"rclone about {Driver6} {command_arg}",
 ]
 
 for command in refesh_commands:
