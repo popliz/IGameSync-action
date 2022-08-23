@@ -28,6 +28,7 @@ sync_commands = [
     f"rclone sync {Driver4}/视频/电视剧 {Driver2}/视频/电视剧 {command_arg}",
     f"rclone sync {Driver4}/视频/电影 {Driver2}/视频/电影 {command_arg}",
     f"rclone sync {Driver4}/视频/动漫 {Driver2}/视频/动漫 {command_arg}",
+    f"rclone sync {Driver4}/离线下载 {Driver2}/离线下载 {command_arg}",
 ]
 
 limit_time = 5 * 3600
