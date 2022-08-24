@@ -12,8 +12,6 @@ command_arg = ("--multi-thread-streams=8 --multi-thread-cutoff=256M "
 Driver1 = "odcn_paolusite_ba95_sp:"
 Driver2 = "od_lizkes_backup_root:"
 Driver3 = "od_lizkes2_backup_root:"
-# 临时
-Driver4 = "gd_team1_lizkes:"
 
 sync_commands = [
     # 同步
@@ -23,12 +21,6 @@ sync_commands = [
     f"rclone sync {Driver1}/未处理 {Driver3}/未处理 {command_arg}",
     f"rclone sync {Driver1}/Public {Driver3}/Public {command_arg}",
     f"rclone sync {Driver1}/个人 {Driver3}/个人 {command_arg}",
-  
-    # 临时
-    f"rclone sync {Driver4}/视频/电视剧 {Driver2}/视频/电视剧 {command_arg}",
-    f"rclone sync {Driver4}/视频/电影 {Driver2}/视频/电影 {command_arg}",
-    f"rclone sync {Driver4}/视频/动漫 {Driver2}/视频/动漫 {command_arg}",
-    f"rclone sync {Driver4}/离线下载 {Driver2}/离线下载 {command_arg}",
 ]
 
 limit_time = 5 * 3600
