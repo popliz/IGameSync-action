@@ -8,11 +8,13 @@ command_arg = ("--timeout 30s --contimeout 10s "
 Driver1 = "gd_team1_lizkes:"
 Driver2 = "od_lizkes_backup_root:"
 Driver3 = "od_lizkes2_backup_root:"
+Driver4 = "od_lizkes2_backup_sp1:"
 
 refesh_commands = [
     f"rclone about {Driver1} {command_arg}",
     f"rclone about {Driver2} {command_arg}",
     f"rclone about {Driver3} {command_arg}",
+    f"rclone about {Driver4} {command_arg}",
 ]
 
 for command in refesh_commands:

@@ -9,18 +9,19 @@ command_arg = ("--multi-thread-streams=8 --multi-thread-cutoff=256M "
                "--low-level-retries 100 --retries 30 --retries-sleep 1s "
                "--create-empty-src-dirs --check-first")
 
-Driver1 = "od_lizkes_backup_root:"
-Driver2 = "od_lizkes2_backup_root:"
-Driver3 = "gd_team1_lizkes:"
+Driver1 = "gd_team1_lizkes:"
+Driver2 = "od_lizkes_backup_root:"
+Driver3 = "od_lizkes2_backup_root:"
+Driver4 = "od_lizkes2_backup_sp1:"
 
 sync_commands = [
-    f"rclone sync {Driver1}/视频 {Driver2}/个人/视频 {command_arg}",
-    # 备份
-    # f"rclone sync {Driver1}/IGame {Driver2}/IGame {command_arg}",
-    # f"rclone sync {Driver1}/IGame {Driver3}/OneDrive/IGame {command_arg}",
-    # f"rclone sync {Driver2}/未处理 {Driver3}/OneDrive/未处理 {command_arg}",
-    # f"rclone sync {Driver2}/Public {Driver3}/OneDrive/Public {command_arg}",
-    # f"rclone sync {Driver2}/个人 {Driver3}/OneDrive/个人 {command_arg}",
+    # 同步
+    f"rclone sync {Driver2}/IGame {Driver3}/IGame {command_arg}",
+    # 备份到SP
+    f"rclone sync {Driver3}/ {Driver4}/ {command_arg}",
+    f"rclone sync {Driver2}/H {Driver4}/个人/视频/H {command_arg}",
+    # 备份到谷歌盘
+    f"rclone sync {Driver4}/ {Driver1}/OneDrive {command_arg}",
 ]
 
 limit_time = 5 * 3600
