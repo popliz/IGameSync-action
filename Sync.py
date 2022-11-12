@@ -19,7 +19,6 @@ sync_commands = [
     f"rclone sync {Driver2}/IGame {Driver3}/IGame {command_arg}",
     # 备份到SP
     f"rclone sync {Driver2}/IGame {Driver4}/IGame {command_arg}",
-    f"rclone sync {Driver2}/H {Driver4}/个人/视频/H {command_arg}",
     # 备份到谷歌盘
     f"rclone sync {Driver4}/ {Driver1}/OneDrive {command_arg}",
 ]
