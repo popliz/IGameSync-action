@@ -15,9 +15,6 @@ Driver3 = "od_lizkes2_backup_root:"
 Driver4 = "od_lizkes2_backup_sp1:"
 
 sync_commands = [
-    # 同步
-    f"rclone sync {Driver4}/IGame {Driver2}/IGame {command_arg}",
-    f"rclone sync {Driver4}/IGame {Driver3}/IGame {command_arg}",
     # 备份到谷歌盘
     f"rclone sync {Driver4}/ {Driver1}/OneDrive {command_arg}",
 ]
