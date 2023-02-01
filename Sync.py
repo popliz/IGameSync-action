@@ -9,14 +9,13 @@ command_arg = ("--multi-thread-streams=8 --multi-thread-cutoff=256M "
                "--low-level-retries 100 --retries 30 --retries-sleep 1s "
                "--create-empty-src-dirs --check-first")
 
-Driver1 = "gd_team1_lizkes:"
-Driver2 = "od_lizkes_backup_root:"
+Driver1 = "od_lizkes_backup_root:"
+Driver2 = "od_lizkes_backup_sp1:"
 Driver3 = "od_lizkes2_backup_root:"
 Driver4 = "od_lizkes2_backup_sp1:"
 
 sync_commands = [
-    # 备份到谷歌盘
-    f"rclone sync {Driver4}/ {Driver1}/OneDrive {command_arg}",
+    f"rclone sync {Driver4}/ {Driver2}/ {command_arg}",
 ]
 
 limit_time = 5 * 3600
