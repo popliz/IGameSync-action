@@ -5,8 +5,8 @@ command_arg = ("--timeout 30s --contimeout 10s "
                "--low-level-retries 100 "
                "--retries 30 --retries-sleep 1s")
 
-Driver1 = "gd_team1_lizkes:"
-Driver2 = "od_lizkes_backup_root:"
+Driver1 = "od_lizkes_backup_root:"
+Driver2 = "od_lizkes_backup_sp1:"
 Driver3 = "od_lizkes2_backup_root:"
 Driver4 = "od_lizkes2_backup_sp1:"
 
